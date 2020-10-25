@@ -43,6 +43,35 @@
       return result;
     }
     console.log('去重3', distinct3(a, b))
+
+    // 4.支持多维数组
+    function flat(arr, target) {
+      arr.forEach(item => {
+        if (Array.isArray(item)) {
+          flat(item, target)
+        } else {
+          target.push(item)
+        }
+      })
+    }
+    function flatArr(arr) {
+      let result = []
+      
+      flat(arr, result)
+      
+      return result
+    }
+    function uniqueArr(arr) {
+      return [...new Set(flatArr(arr))]
+    }
+    const result = uniqueArr([1, 2, 3, 4, [3, 4, [4, 6]]])
+    console.log('多维去重4', result) // 1,2,3,4,6
+
+    // Array.prototype.flat兼容性不太好
+    function uniqueArr(arr) {
+      return [...new Set(arr.flat(Infinity))]
+    }
+    console.log('兼容性多维去重4', result) // 1,2,3,4,6
   </script>
 </head>
 <body>
