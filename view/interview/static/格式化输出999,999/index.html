@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        // 实现格式化输出，比如输入999999999，输出999,999,999
+        // 1.普通版
         function formatNumber(num) {
             let arr = [],
                 str = num + '',
@@ -16,6 +18,7 @@
             str.length % 3 && arr.unshift(str.slice(0, str.length % 3));
             return arr.toString();
         }
+        console.log(formatNumber(1234567890));
         console.log(formatNumber(1234567890));
     </script>
 </head>
