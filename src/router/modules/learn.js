@@ -16,5 +16,6 @@ export default {
     { path: 'html', name: `${pre}html`, component: _import('demo/learn/html/index'), meta: { ...meta, title: 'HTML' } },
     { path: 'css', name: `${pre}css`, component: _import('demo/learn/css/index'), meta: { ...meta, title: 'CSS' } },
     { path: 'js', name: `${pre}js`, component: _import('demo/learn/js/index'), meta: { ...meta, title: 'JS' } },
+    { path: 'program', name: `${pre}program`, component: _import('demo/learn/program/index'), meta: { ...meta, title: '编程' } }
   ])('demo-learn-')
 }

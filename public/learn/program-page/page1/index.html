@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .label {
+      display: inline-block;
+      padding: 12px;
+      margin: 16px;
+      text-align: center;
+      border: 1px solid #999;
+      cursor: pointer;
+    }
+    .label-name {
+      width: 160px;
+    }
+  </style>
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script src="./main.js"></script>
+</head>
+<body>
+  <div>鼠标点击页面中任意标签，输出该标签第名称（注意兼容性）</div>
+  <div class="label">DIV</div>
+  <p class="label">P</p>
+  <a href="#" class="label">A</a>
+  <span class="label">SPAN</span>
+  <button class="label">BUTTON</button>
+  <h4 class="label">H4</h4>
+
+  <div>1.点击了 <input class="label-name" id="labelName" value="no tagName" type="text" readonly> 标签</div>
+  <div>2.点击了 <input class="label-name" id="labelName2" value="no tagName" type="text" readonly> 标签</div>
+
+  <div>
+    <pre>
+      <code>
+        <div>jhhj</div>
+// 直接实现
+document.onclick = function(e) {
+  var e = e || window.event; //处理兼容，获取事件对象
+  var o = e['target'] || e['srcElement']; //处理兼容，获取事件目标
+  $('#labelName').val(o.tagName.toLowerCase());
+}
+
+// 优雅实现
+function elementName(evt) {
+  evt = evt || window.event;
+  var selected = evt.target || evt.srcElement;
+  var eleName = selected && selected.tagName ? selected.tagName.toLowerCase() : 'no tagName';
+  $('#labelName2').val(eleName);
+}
+
+var el = document.getElementsByTagName('body');
+el[0].onclick = elementName;
+      </code>
+    </pre>
+  </div>
+</body>
+</html>

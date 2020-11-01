@@ -78,11 +78,21 @@ const frameOut = [
 for(let i=1;i<5;i++) {
   let temp = {
     path: '/learn/js/page' + i,
-    name: 'JS' + i,
+    name: 'js' + i,
     component: _import('learn/js/page' + i) //动态路由
   }
   frameOut.push(temp)
 }
+// 编程题目列表
+for(let i=1;i<2;i++) {
+  let temp = {
+    path: '/learn/program/page' + i,
+    name: 'program' + i,
+    component: _import('learn/program/page' + i)
+  }
+  frameOut.push(temp)
+}
+// console.log('frameOut', JSON.stringify(frameOut))
 
 /**
  * 错误页面
