@@ -74,7 +74,7 @@ export default {
       this.pagination.total = this.list.length
       this.loading = false
     },
-    handleView({index, row}) {
+    handleView ({ index, row }) {
       const { href } = this.$router.resolve({
         path: '/learn/program/page' + row.id
       })

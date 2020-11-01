@@ -85,7 +85,7 @@ export default {
       //   this.loading = false
       // })
     },
-    handleView({index, row}) {
+    handleView ({ index, row }) {
       // this.$router.push({
       //   path: '/learn/js/page' + row.id
       // })

@@ -10,19 +10,19 @@ function copyList (originList, newList, options, parentId) {
   }
 }
 
-function delById (req, list) {
-  for (let i = 0; i < list.length; i++) {
-    const item = list[i]
-    if ((item.id) === parseInt(req.params.id)) {
-      console.log('remove i')
-      list.splice(i, 1)
-      break
-    }
-    if (item.children != null && item.children.length > 0) {
-      delById(req, item.children)
-    }
-  }
-}
+// function delById (req, list) {
+//   for (let i = 0; i < list.length; i++) {
+//     const item = list[i]
+//     if ((item.id) === parseInt(req.params.id)) {
+//       console.log('remove i')
+//       list.splice(i, 1)
+//       break
+//     }
+//     if (item.children != null && item.children.length > 0) {
+//       delById(req, item.children)
+//     }
+//   }
+// }
 export default {
   findById (id, list) {
     for (const item of list) {

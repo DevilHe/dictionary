@@ -57,7 +57,7 @@ const frameIn = [
   },
   learn,
   // playground,
-  d2Crud,
+  d2Crud
   // d2CrudPlus,
   // plugins,
   // components
@@ -75,17 +75,17 @@ const frameOut = [
   }
 ]
 // JS题目列表
-for(let i=1;i<5;i++) {
-  let temp = {
+for (let i = 1; i < 5; i++) {
+  const temp = {
     path: '/learn/js/page' + i,
     name: 'js' + i,
-    component: _import('learn/js/page' + i) //动态路由
+    component: _import('learn/js/page' + i) // 动态路由
   }
   frameOut.push(temp)
 }
 // 编程题目列表
-for(let i=1;i<2;i++) {
-  let temp = {
+for (let i = 1; i < 2; i++) {
+  const temp = {
     path: '/learn/program/page' + i,
     name: 'program' + i,
     component: _import('learn/program/page' + i)

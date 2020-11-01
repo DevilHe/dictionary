@@ -48,7 +48,7 @@ export const menuHeader = supplementPath([
   // demoPlayground,
   // demoComponents,
   // demoPlugins,
-  demoLearn,
+  demoLearn
   // {
   //   title: '社区插件',
   //   icon: 'puzzle-piece',
