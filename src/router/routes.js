@@ -75,7 +75,7 @@ const frameOut = [
   }
 ]
 // JS题目列表
-for (let i = 1; i < 5; i++) {
+for (let i = 1; i < 6; i++) {
   const temp = {
     path: '/learn/js/page' + i,
     name: 'js' + i,

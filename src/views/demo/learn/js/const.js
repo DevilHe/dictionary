@@ -19,6 +19,11 @@ const JsList = {
       id: 4,
       name: '格式化',
       desc: '格式化输出999,999,999'
+    },
+    {
+      id: 5,
+      name: '原生实现addClass',
+      desc: '原生js实现addClass功能，用多种方法'
     }
   ]
 }
