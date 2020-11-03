@@ -74,6 +74,15 @@ const frameOut = [
     component: _import('system/login')
   }
 ]
+// CSS题目列表
+for (let i = 1; i < 2; i++) {
+  const temp = {
+    path: '/learn/css/page' + i,
+    name: 'css' + i,
+    component: _import('learn/css/page' + i) // 动态路由
+  }
+  frameOut.push(temp)
+}
 // JS题目列表
 for (let i = 1; i < 6; i++) {
   const temp = {
