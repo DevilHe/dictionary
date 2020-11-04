@@ -75,7 +75,7 @@ const frameOut = [
   }
 ]
 // CSS题目列表
-for (let i = 1; i < 2; i++) {
+for (let i = 1; i < 3; i++) {
   const temp = {
     path: '/learn/css/page' + i,
     name: 'css' + i,

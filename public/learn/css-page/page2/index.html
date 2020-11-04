@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*上半圆*/
+    .semi {
+      margin: 0 16px;
+      float: left;
+    }
+    .semi-circle {
+      width: 100px;
+      height: 50px;
+      background-color: #f00;
+      border-radius: 50px 50px 0 0; /*左上、右上、右下、左下*/
+    }
+    /*下半圆*/
+    .semi-circle2 {
+      width: 100px;
+      height: 50px;
+      background-color: #f00;
+      border-radius: 0 0 50px 50px;
+    }
+    /*左半圆*/
+    .semi-circle3 {
+      width: 100px;
+      height: 50px;
+      background-color: #f00;
+      border-radius: 50px 0 0 50px;
+    }
+    /*右半圆*/
+    .semi-circle4 {
+      width: 100px;
+      height: 50px;
+      background-color: #f00;
+      border-radius: 0 50px 50px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- https://blog.csdn.net/Super_LD/article/details/80753155 -->
+  <p>半圆</p>
+  <div class="semi semi-circle"></div>
+  <div class="semi semi-circle2"></div>
+  <div class="semi semi-circle3"></div>
+  <div class="semi semi-circle4"></div>
+</body>
+</html>
