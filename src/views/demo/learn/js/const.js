@@ -24,6 +24,11 @@ const JsList = {
       id: 5,
       name: '原生实现addClass',
       desc: '原生js实现addClass功能，用多种方法'
+    },
+    {
+      id: 6,
+      name: 'js实现cookie的设置、读取、删除',
+      desc: '使用JavaScript实现cookie的设置、读取、删除'
     }
   ]
 }

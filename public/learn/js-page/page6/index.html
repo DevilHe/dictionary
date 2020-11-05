@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // 设置cookie
+      function setCookie(name, value){
+        var Days = 30;
+        var exp = new Date();
+        exp.setTime(exp.getTime()+Days*24*60*60*1000);
+        // 用escape()函数进行编码，它能将一些特殊符号使用十六进制表示，还可避免中文乱码，当使用escape()编码后，在取出值以后需要使用unescape()进行解码才能得到原来的cookie值
+        // expires=+exp.toGMTString() 设置过期时间
+        document.cookie = name + '=' + escape(value) + ';expires=' + exp.toGMTString();
+      }
+      setCookie('name', 'zhi值');
+
+      // 读取cookie
+      function getCookie(name){
+        var arr, reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)');
+        if(arr = document.cookie.match(reg)){
+          return unescape(arr[2])
+        }else{
+          return null
+        }
+      }
+      var getVal = getCookie('name');
+      console.log(getVal);
+
+      // 删除cookie
+      function delCookie(name) {
+        var exp = new Date();
+        // 将exp设置为过去的时间
+        exp.setTime(exp.getTime() - 1);
+        var cval = getCookie(name);
+        if(cval != null){
+          document.cookie = name + '=' + cval + ';expires=' + exp.toGMTString();
+        }
+      }
+      delCookie('name')
+    });
+  </script>
+</head>
+<body>
+  <p>js操作cookie</p>
+</body>
+</html>
