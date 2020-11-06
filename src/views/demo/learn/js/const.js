@@ -29,6 +29,11 @@ const JsList = {
       id: 6,
       name: 'js实现cookie的设置、读取、删除',
       desc: '使用JavaScript实现cookie的设置、读取、删除'
+    },
+    {
+      id: 7,
+      name: '实现输出一个十六进制的随机颜色',
+      desc: '实现输出一个十六进制的随机颜色'
     }
   ]
 }
