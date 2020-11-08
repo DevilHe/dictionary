@@ -56,8 +56,8 @@ class Generator {
 
 export default Generator
 
-// 生成迷盘
-export const puzzleMatrix = (level = 5) => {
+// 生成迷盘  level控制难度，数字越小，难度越低
+export const puzzleMatrix = (level = 3) => {
   const generator = new Generator().init()
   return generator.map(row => {
     return row.map(cell => Math.random() * 9 < level ? 0 : cell)

@@ -29,14 +29,14 @@
       </div>
     </div>
 
-    <div class="popup-num grid"
-      v-show="popShow"
-      :style="{
+<!-- :style="{
         top: `calc(${gridPosition[0] * 10}vw + ${gridPosition[0] + 1}px)`,
         left: gridPosition[1] < 4 ? (gridPosition[1] + 1) * 10 + 'vw' : (gridPosition[1] * 10) - 39.5 + 'vw'
-      }"
+      }" -->
+    <div class="popup-num grid"
+      v-show="popShow"
+      style="top: 140px;left: 400px;"
     >
-
       <div class="row"
         v-for="(row, i) in popupNumbers"
         :key="i"
@@ -119,6 +119,7 @@ export default {
         isSuccess && alert('恭喜您，游戏成功！')
       } else if (type === 'reset') {
         this.matrix = this.cloneMatrix
+        // TODO点击重置后，空白处填进数字后变成fixed不可修改bug
       } else if (type === 'clear') {
         this.clearErrorMarks = true
       } else if (type === 'rebuild') {
