@@ -1,62 +1,70 @@
 <template>
-  <div>
-    <div class="title">
-      <h1>{{ title }}</h1>
-    </div>
+  <d2-container>
+    <template slot="header">{{ title }}</template>
 
-    <div class="container grid">
-      <div class="row" v-for="(row, i) in matrix" :key="i" :class="rowClass[i % 3]">
-        <span
-          v-for="(col, j) in row"
-          :key="j"
-          :class="[
-            colClass[j % 3],
-            {empty: !col},
-            {fixed: cloneMatrix[i][j]},
-            {mark1: !cloneMatrix[i][j]},
-            {error: (!matrixMarks[i][j] || !col) && !clearErrorMarks && !cloneMatrix[i][j]}
-          ]"
-          @click="cloneMatrix[i][j] ? false : clickGrid(i, j)">{{ col }}</span>
+    <div>
+      <div class="container grid">
+        <div class="row" v-for="(row, i) in matrix" :key="i" :class="rowClass[i % 3]">
+          <span
+            v-for="(col, j) in row"
+            :key="j"
+            :class="[
+              colClass[j % 3],
+              {empty: !col},
+              {fixed: cloneMatrix[i][j]},
+              {mark1: !cloneMatrix[i][j]},
+              {error: (!matrixMarks[i][j] || !col) && !clearErrorMarks && !cloneMatrix[i][j]}
+            ]"
+            @click="cloneMatrix[i][j] ? false : clickGrid(i, j)">{{ col }}</span>
+        </div>
+      </div>
+
+      <div class="rules">
+        <p>游戏规则：</p>
+        <p>所有小方格填入数字1～9</p>
+        <p>每个数字在每行只能出现1次</p>
+        <p>每个数字在每列只能出现1次</p>
+        <p>每个数字在每宫只能出现1次</p>
+      </div>
+
+      <div class="dashboard">
+        <div class="buttons">
+          <button
+            v-for="item in buttons"
+            :key="item.key"
+            @click="handleButton(item.key)">{{ item.text }}</button>
+        </div>
+      </div>
+
+  <!-- :style="{
+          top: `calc(${gridPosition[0] * 10}vw + ${gridPosition[0] + 1}px)`,
+          left: gridPosition[1] < 4 ? (gridPosition[1] + 1) * 10 + 'vw' : (gridPosition[1] * 10) - 39.5 + 'vw'
+        }" -->
+      <div class="popup-num grid"
+        v-show="popShow"
+        style="top: 140px;left: 400px;"
+      >
+        <div class="row"
+          v-for="(row, i) in popupNumbers"
+          :key="i"
+          :class="[{'row-g-top': i === 0}, {'row-g-bottom': i === 3}]">
+          <span
+            v-for="(cell, j) in row"
+            :key="j"
+            :class="[
+              {'col-g-left': j % 3 === 0},
+              {'col-g-right': j % 3 === 2},
+              {'mark': cell === ''},
+              {'mark1': i === 3 && j === 0},
+              {'mark2': i === 3 && j === 2}
+            ]"
+            @click="modifyGrid(cell)">
+            {{ cell }}
+          </span>
+        </div>
       </div>
     </div>
-
-    <div class="dashboard">
-      <div class="buttons">
-        <button
-          v-for="item in buttons"
-          :key="item.key"
-          @click="handleButton(item.key)">{{ item.text }}</button>
-      </div>
-    </div>
-
-<!-- :style="{
-        top: `calc(${gridPosition[0] * 10}vw + ${gridPosition[0] + 1}px)`,
-        left: gridPosition[1] < 4 ? (gridPosition[1] + 1) * 10 + 'vw' : (gridPosition[1] * 10) - 39.5 + 'vw'
-      }" -->
-    <div class="popup-num grid"
-      v-show="popShow"
-      style="top: 140px;left: 400px;"
-    >
-      <div class="row"
-        v-for="(row, i) in popupNumbers"
-        :key="i"
-        :class="[{'row-g-top': i === 0}, {'row-g-bottom': i === 3}]">
-        <span
-          v-for="(cell, j) in row"
-          :key="j"
-          :class="[
-            {'col-g-left': j % 3 === 0},
-            {'col-g-right': j % 3 === 2},
-            {'mark': cell === ''},
-            {'mark1': i === 3 && j === 0},
-            {'mark2': i === 3 && j === 2}
-          ]"
-          @click="modifyGrid(cell)">
-          {{ cell }}
-        </span>
-      </div>
-    </div>
-  </div>
+  </d2-container>
 </template>
 
 <script>
