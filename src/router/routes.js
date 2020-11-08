@@ -4,6 +4,7 @@ import d2Crud from './modules/d2-crud'
 // import plugins from './modules/plugins'
 // import components from './modules/components'
 import learn from './modules/learn'
+import cases from './modules/cases'
 
 import layoutHeaderAside from '@/layout/header-aside'
 
@@ -56,6 +57,7 @@ const frameIn = [
     ]
   },
   learn,
+  cases,
   // playground,
   d2Crud
   // d2CrudPlus,

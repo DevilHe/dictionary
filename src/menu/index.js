@@ -12,6 +12,7 @@ import { uniqueId } from 'lodash'
 // import demoD2CrudPlus from './modules/demo-d2-crud-plus'
 // 学习
 import demoLearn from './modules/demo-learn'
+import demoCases from './modules/demo-cases'
 
 /**
  * @description 给菜单数据补充上 path 字段
@@ -35,7 +36,8 @@ export const menuAside = supplementPath([
   // demoPlayground,
   // demoD2Crud,
   // demoD2CrudPlus,
-  demoLearn
+  demoLearn,
+  demoCases
 ])
 
 // 菜单 顶栏
@@ -48,7 +50,8 @@ export const menuHeader = supplementPath([
   // demoPlayground,
   // demoComponents,
   // demoPlugins,
-  demoLearn
+  demoLearn,
+  demoCases
   // {
   //   title: '社区插件',
   //   icon: 'puzzle-piece',
