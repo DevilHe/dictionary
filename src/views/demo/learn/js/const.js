@@ -34,6 +34,11 @@ const JsList = {
       id: 7,
       name: '实现输出一个十六进制的随机颜色',
       desc: '实现输出一个十六进制的随机颜色'
+    },
+    {
+      id: 8,
+      name: 'trim截取删除字符串前后的空白字符',
+      desc: '给JavaScript的String原生对象添加一个名为trim的原型方法，用于截取字符串前后的空白字符'
     }
   ]
 }

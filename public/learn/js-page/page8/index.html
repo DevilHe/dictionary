@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script>
+    String.prototype.trim = function() {
+      return this.replace(/^\s*|\s*$/g, '');
+    }
+    var str = '  you are right!  '
+    console.log('测试' + str + '测试');
+    console.log('测试' + str.trim() + '测试');
+
+    // jQuery的trim()方法
+    console.log('测试jQuery' + str + '测试jQuery');
+    console.log('测试jQuery' + $.trim(str) + '测试jQuery');
+  </script>
+</head>
+<body>
+  <div>trim方法</div>
+</body>
+</html>
