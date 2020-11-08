@@ -74,6 +74,7 @@ export default {
       title: '数独游戏',
       matrix: myPuzzle, // 生成棋盘数据
       cloneMatrix: deepClone(myPuzzle), // 棋盘原始数据、重置时追溯
+      myPuzzleReset: JSON.parse(JSON.stringify(myPuzzle)), // 重置
       matrixMarks: makeMatrix(true), // 解密结果
       isSuccess: null, // 是否解密成功
       rowClass: ['row_g_top', 'row_g_middle', 'row_g_bottom'],
@@ -118,12 +119,12 @@ export default {
         this.matrixMarks = myChecker.matrixMarks()
         isSuccess && alert('恭喜您，游戏成功！')
       } else if (type === 'reset') {
-        this.matrix = this.cloneMatrix
-        // TODO点击重置后，空白处填进数字后变成fixed不可修改bug
+        this.matrix = this.myPuzzleReset
       } else if (type === 'clear') {
         this.clearErrorMarks = true
       } else if (type === 'rebuild') {
         const newPuzzle = puzzleMatrix()
+        this.myPuzzleReset = JSON.parse(JSON.stringify(newPuzzle))
         this.matrix = newPuzzle
         this.cloneMatrix = deepClone(newPuzzle)
         this.matrixMarks = makeMatrix(true)
@@ -137,7 +138,7 @@ export default {
         Vue.set(this.gridPosition, i, e)
       })
       this.popShow = shown === 0 ? !this.popShow : shown
-      console.log(this.gridPosition)
+      // console.log(this.gridPosition)
     },
     modifyGrid (val) {
       const num = val === '' ? 0 : val
