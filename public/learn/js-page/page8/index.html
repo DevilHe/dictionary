@@ -9,13 +9,29 @@
     String.prototype.trim = function() {
       return this.replace(/^\s*|\s*$/g, '');
     }
-    var str = '  you are right!  '
+    var str = '   you are right!  '
     console.log('测试' + str + '测试');
     console.log('测试' + str.trim() + '测试');
 
-    // jQuery的trim()方法
+    // jQuery的$.trim(str)方法,无法去除中间的空格
     console.log('测试jQuery' + str + '测试jQuery');
     console.log('测试jQuery' + $.trim(str) + '测试jQuery');
+
+    // str.trim() 局限性：无法去除中间的空格
+    // str.trimLeft()，str.trimRight() 分别用于去除字符串左右空格
+    console.log('测试trim' + str.trim() + '测试trim');
+    console.log('测试trimLeft' + str.trimLeft() + '测试trimLeft');
+    console.log('测试trimRight' + str.trimRight() + '测试trimRight');
+
+    // 使用 replace 正则匹配的方法,以下s+或s*
+    // 去除所有空格
+    console.log('去除所有空格', 'a'+str.replace(/\s+/g,'')+'a')
+    // 去除两头空格
+    console.log('去除两头空格', 'b'+str.replace(/^\s+|\s+$/g,'')+'b')
+    // 去除左空格
+    console.log('去除左空格', 'c'+str.replace(/^\s+/, '')+'c')
+    // 去除右空格
+    console.log('去除右空格', 'd'+str.replace(/(\s+$)/g, '')+'d')
   </script>
 </head>
 <body>

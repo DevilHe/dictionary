@@ -37,8 +37,8 @@ const JsList = {
     },
     {
       id: 8,
-      name: 'trim截取删除字符串前后的空白字符',
-      desc: '给JavaScript的String原生对象添加一个名为trim的原型方法，用于截取字符串前后的空白字符'
+      name: '去除字符串空字符',
+      desc: 'trim的原型方法，用于截取字符串前后的空字符，正则匹配去除任意位置空字符'
     }
   ]
 }
