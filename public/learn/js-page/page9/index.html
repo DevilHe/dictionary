@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 版本号排序
+    const versionSort = version => {
+      const temp = version.map(v => v.split("."));
+      for (let i = 0; i < temp.length; i++) {
+        let minIndex = i;
+        for (let j = i; j < temp.length; j++) {
+          for (let k = 0; k < temp[j].length; k++) {
+            const current = +temp[j][k];
+            const min = +temp[minIndex][k];
+            if (current < min) {
+              minIndex = j;
+            }
+            // 只要不等，就立刻结束最内层遍历！
+            if (current !== min) {
+              break;
+            }
+          }
+        }
+        [temp[i], temp[minIndex]] = [temp[minIndex], temp[i]];
+      }
+      return temp.map(v => v.join("."));
+    };
+    const version1 = ["1.45.0", "1.5", "6", "3.3.3.3.3"];
+    console.log(versionSort(version1));
+
+    function rule(str1, str2) {
+      let arr1 = str1.split(".");
+      let arr2 = str2.split(".");
+      let minLen = Math.min(arr1.length, arr2.length); // 取出两个数组中的最小长度
+      // let maxLen = Math.max(arr1.length, arr2.length); // 最大长度
+
+      // 以最短的数组为基础进行遍历
+      for (let i = 0; i < minLen; i++) {
+        // 这里需要转换后才进行比较，否则会出现'10'<'7'的情况
+        if (parseInt(arr1[i]) > parseInt(arr2[i])) {
+          return 1; // 返回一个大于0的数，表示前者的index比后者的index大
+        } else if (parseInt(arr1[i]) < parseInt(arr2[i])) {
+          return -1; // 返回一个小于0的数，表示前者的index比后者的index小
+        }
+        // 因为不只进行一次计较，所以这里不对相等的两个数进行处理，否则有可能第一次比较就返回，不符合要求
+        // 这个是为了区分'4.8'和'4.8.0'的情况
+        // 在前面的比较都相同的情况下，则比较长度
+        // 位数多的index大
+        if (i + 1 === minLen) {
+          if (arr1.length > arr2.length) {
+            return 1;
+          } else {
+            return -1;
+          }
+        }
+      }
+    }
+    const versions = ["1.45.0", "1.5", "6", "3.3.3.3.3", "4.1.0", "4.10", "4.1"];
+    console.log(versions.sort(rule));
+  </script>
+</head>
+<body>
+  <div>版本号排序</div>
+</body>
+</html>
