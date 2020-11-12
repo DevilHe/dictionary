@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.circle {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background-color: #f00;
+  margin-right: 4px;
+}
+.container {
+  height: 100%;
+  padding: 16px 24px;
+  font-size: 14px;
+}
+.wrapper .wrapper-header {
+  font-size: 16px;
+  font-weight: bolder;
+  margin: 16px 0 8px;
+}
+.wrapper-content .level-1 {
+  padding: 6px 0;
+  line-height: 20px;
+}
+.wrapper-content .level-2 {
+  font-size: 12px;
+  padding: 4px 0 4px 24px;
+  line-height: 18px;
+}
