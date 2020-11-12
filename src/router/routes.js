@@ -94,6 +94,15 @@ for (let i = 1; i < 10; i++) {
   }
   frameOut.push(temp)
 }
+// Vue题目列表
+for (let i = 1; i < 2; i++) {
+  const temp = {
+    path: '/learn/vue/page' + i,
+    name: 'vue' + i,
+    component: _import('learn/vue/page' + i) // 动态路由
+  }
+  frameOut.push(temp)
+}
 // 编程题目列表
 for (let i = 1; i < 2; i++) {
   const temp = {

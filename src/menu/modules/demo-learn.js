@@ -7,6 +7,7 @@ export default {
     { path: `${pre}html`, title: 'HTML' },
     { path: `${pre}css`, title: 'CSS' },
     { path: `${pre}js`, title: 'JS' },
+    { path: `${pre}vue`, title: 'Vue' },
     { path: `${pre}program`, title: '编程' }
   ])('/demo/learn/')
 }
