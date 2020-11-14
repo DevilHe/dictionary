@@ -7,6 +7,7 @@
   <style>
     .spclear {
       clear: both;
+      margin-bottom: 12px;
     }
     /*上半圆*/
     .semi {
@@ -109,6 +110,61 @@
       border-bottom: 50px solid transparent;
       border-left: 50px solid transparent;
     }
+    /* 伪元素法 */
+    .triangle-top1, .triangle-top2 {
+      position:relative;
+      width: 0;
+      height: 0;
+      border-width: 0 40px 40px;
+      border-style: solid;
+      border-color: transparent transparent blue;
+    }
+    .triangle-top1:after {
+      content: "";
+      position: absolute;
+      top: 1px;
+      left: -38px;
+      border-width: 0 38px 38px;
+      border-style: solid;
+      border-color: transparent transparent yellow;
+    }
+    .triangle-top2:after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: -38px;
+      border-width: 0 38px 38px;
+      border-style: solid;
+      border-color: transparent transparent #fff;
+    }
+    .triangle-bottom1, .triangle-bottom2 {
+      position: relative;
+      width: 0;
+      height: 0;
+      width: 0;
+      height: 0;
+      border-top: 40px solid black;
+      border-right: 40px solid transparent;
+      border-left: 40px solid transparent;
+    }
+    .triangle-bottom1:after {
+      content: "";
+      position: absolute;
+      top: -42px;
+      left: -40px;
+      border-top: 40px solid #f00;
+      border-right: 40px solid transparent;
+      border-left: 40px solid transparent;
+    }
+    .triangle-bottom2:after {
+      content: "";
+      position: absolute;
+      top: -42px;
+      left: -40px;
+      border-top: 40px solid #fff;
+      border-right: 40px solid transparent;
+      border-left: 40px solid transparent;
+    }
   </style>
 </head>
 <body>
@@ -131,6 +187,15 @@
   <div class="triangle triangle-left"></div>
   <div class="triangle triangle-right"></div>
   <div class="spclear"></div>
+  <div class="triangle triangle-top1"></div>
+  <div class="triangle triangle-bottom1"></div>
+  <div class="triangle triangle-left1"></div>
+  <div class="triangle triangle-right1"></div>
+  <div class="spclear"></div>
+  <div class="triangle triangle-top2"></div>
+  <div class="triangle triangle-bottom2"></div>
+  <div class="triangle triangle-left2"></div>
+  <div class="triangle triangle-right2"></div>
 
 </body>
 </html>
