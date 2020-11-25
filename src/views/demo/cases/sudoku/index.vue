@@ -2,7 +2,7 @@
   <d2-container>
     <template slot="header">{{ title }}</template>
 
-    <div>
+    <div class="wrapper">
       <div class="container grid">
         <div class="row" v-for="(row, i) in matrix" :key="i" :class="rowClass[i % 3]">
           <span
@@ -21,10 +21,10 @@
 
       <div class="rules">
         <p>游戏规则：</p>
-        <p>所有小方格填入数字1～9</p>
-        <p>每个数字在每行只能出现1次</p>
-        <p>每个数字在每列只能出现1次</p>
-        <p>每个数字在每宫只能出现1次</p>
+        <p class="rules-list">所有小方格填入数字1～9</p>
+        <p class="rules-list">每个数字在每行只能出现1次</p>
+        <p class="rules-list">每个数字在每列只能出现1次</p>
+        <p class="rules-list">每个数字在每宫只能出现1次</p>
       </div>
 
       <div class="dashboard">

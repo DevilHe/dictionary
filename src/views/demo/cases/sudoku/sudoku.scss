@@ -38,6 +38,11 @@ h2 {
   display: none !important;
 }
 
+.wrapper {
+  position: relative;
+  height: 100%;
+}
+
 .container {
   padding: 0 36px;
 }
@@ -51,8 +56,8 @@ h2 {
     font-size: 16px;
     padding: 0;
     margin: 0;
-    height: 4vw;
-    line-height: 4vw;
+    height: 30px;
+    line-height: 30px;
     width: 30px;
     border-color: $borderColor;
     border-style: solid;
@@ -116,16 +121,16 @@ h2 {
 }
 
 .dashboard {
-  position: absolute;
-  bottom: 0;
+  // position: absolute;
+  // bottom: 0;
   width: 400px;
-  margin: 12px 36px;
+  margin: 0 36px;
   height: 32px;
   .buttons {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
     button {
       font-family: $rootFontFamily;
       background: steelblue;
@@ -174,6 +179,9 @@ h2 {
     &:first-child {
       text-indent: 0;
       font-weight: bolder;
+    }
+    &.rules-list {
+      font-size: 12px;
     }
   }
 }
