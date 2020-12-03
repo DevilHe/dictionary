@@ -44,6 +44,11 @@ const JsList = {
       id: 9,
       name: '版本号排序',
       desc: '版本号排序'
+    },
+    {
+      id: 10,
+      name: '倒计时',
+      desc: '实现一个倒计时，setInterval实现的话，如何消除时间误差'
     }
   ]
 }

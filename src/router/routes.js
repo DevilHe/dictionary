@@ -86,7 +86,7 @@ for (let i = 1; i < 3; i++) {
   frameOut.push(temp)
 }
 // JS题目列表
-for (let i = 1; i < 10; i++) {
+for (let i = 1; i < 11; i++) {
   const temp = {
     path: '/learn/js/page' + i,
     name: 'js' + i,
